@@ -3,7 +3,7 @@ on: push
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: polarbookshop/polar-ui
+  IMAGE_NAME: bappeda-dev-team/kertaskerja-ui
   VERSION: latest
 
 jobs:
