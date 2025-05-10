@@ -12,12 +12,14 @@ import { Book } from '../types';
 export class BookFormComponent implements OnInit {
 
   @Input() buttonText = 'Submit';
-  @Input() titleText = 'Book Information';
+  @Input() titleText = 'OPD Information';
   @Input() currentBook: Book | undefined;
   @Output() onSubmit = new EventEmitter<Book>();
 
   book: Book = {
     id: undefined,
+    kodeOpd: '',
+    namaOpd: '',
     isbn: '',
     title: '',
     author: '',
@@ -25,7 +27,7 @@ export class BookFormComponent implements OnInit {
     publisher: ''
   };
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit(): void {
     if (this.currentBook) {

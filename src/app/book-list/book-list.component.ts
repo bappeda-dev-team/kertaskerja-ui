@@ -30,8 +30,8 @@ export class BookListComponent implements OnInit {
     this.bookService.getBooks().subscribe(books => this.books = books);
   }
 
-  removeBook(isbn: string): void {
-    this.bookService.deleteBook(isbn)
+  removeBook(kodeOpd: string): void {
+    this.bookService.deleteBook(kodeOpd)
       .subscribe(() => {
         this.router.navigateByUrl('/browse-books');
       });

@@ -1,5 +1,7 @@
 export interface Book {
     id: number | undefined;
+    kodeOpd: string;
+    namaOpd: string;
     isbn: string;
     title: string;
     author: string;

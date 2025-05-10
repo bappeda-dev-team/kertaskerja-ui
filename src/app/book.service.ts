@@ -14,32 +14,32 @@ const httpOptions = {
 })
 export class BookService {
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient) {}
 
   getBooks(): Observable<Book[]> {
-    return this.httpClient.get<Book[]>('/books');
+    return this.httpClient.get<Book[]>('/opds');
   }
 
-  getBookByIsbn(isbn: string): Observable<Book> {
-    return this.httpClient.get<Book>(`/books/${isbn}`);
+  getBookByIsbn(kodeOpd: string): Observable<Book> {
+    return this.httpClient.get<Book>(`/opds/${kodeOpd}`);
   }
 
   addBook(book: Book): Observable<Book> {
-    return this.httpClient.post<Book>(`/books`,
+    return this.httpClient.post<Book>(`/opds`,
       book,
       httpOptions
     );
   }
 
   editBook(book: Book): Observable<Book> {
-    return this.httpClient.put<Book>(`/books/${book.isbn}`,
+    return this.httpClient.put<Book>(`/opds/${book.kodeOpd}`,
       book,
       httpOptions
     );
   }
 
-  deleteBook(isbn: string): Observable<any> {
-    return this.httpClient.delete<any>(`/books/${isbn}`);
+  deleteBook(kodeOpd: string): Observable<any> {
+    return this.httpClient.delete<any>(`/opds/${kodeOpd}`);
   }
 
 }
