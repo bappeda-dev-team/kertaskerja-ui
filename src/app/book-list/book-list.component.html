@@ -1,5 +1,5 @@
 <div class="grid-container" *ngIf="books">
-    <h1 class="mat-h1">Browse Books</h1>
+    <h1 class="mat-h1">Daftar OPD</h1>
     <mat-grid-list [cols]="colNumber | async" rowHeight="400px">
       <mat-grid-tile *ngFor="let book of books" colspan="1" rowspan="1">
         <mat-card class="dashboard-card">
@@ -11,7 +11,6 @@
               </button>
               <mat-menu #menu="matMenu" xPosition="before">
                 <button mat-menu-item routerLink="/edit-book/{{ book.kodeOpd }}">Edit</button>
-                <button mat-menu-item (click)="removeBook(book.kodeOpd)">Remove</button>
               </mat-menu>
             </mat-card-title>
           </mat-card-header>
@@ -21,9 +20,6 @@
                 <mat-list-item role="listitem">Kode OPD: {{ book.kodeOpd }}</mat-list-item>
               </mat-list>
           </mat-card-content>
-          <mat-card-actions class="card-actions">
-            <button mat-raised-button (click)="createOrder(book)" color="primary">ORDER</button>
-          </mat-card-actions>
         </mat-card>
       </mat-grid-tile>
     </mat-grid-list>

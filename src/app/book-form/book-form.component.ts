@@ -11,8 +11,8 @@ import { Book } from '../types';
 })
 export class BookFormComponent implements OnInit {
 
-  @Input() buttonText = 'Submit';
-  @Input() titleText = 'OPD Information';
+  @Input() buttonText = 'Simpan';
+  @Input() titleText = 'Info OPD';
   @Input() currentBook: Book | undefined;
   @Output() onSubmit = new EventEmitter<Book>();
 

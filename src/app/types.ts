@@ -9,6 +9,12 @@ export interface Book {
     publisher: string | undefined;
 }
 
+export interface Opd {
+    id: number | undefined;
+    kodeOpd: string;
+    namaOpd: string;
+}
+
 export interface Order {
     id: number;
     bookIsbn: string;
